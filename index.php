@@ -5,13 +5,39 @@
 	<meta name="viewport" content="width-device-width", initital-scale-1.0>
 	<title>Smart Pension</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="image-slider">
-		<div class="slide active">
-			<img src="images/11.jpg" alt="">
-			<div class="info">
-				<h2>Slide 01</h2>
+
+	<nav>
+		<label class="logo">W-School</label>
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">Contact</a></li>
+			<li><a href="">Applications</a></li>
+			<li><a href="login.php" class="btn btn-success">Login</a></li>
+			<li><a href="Register.php" class="btn btn-success">Register</a></li>
+		</ul>
+	</nav>
+
+	<?php
+		include 'myslider.php';
+	?>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<img class="welcome_img" src="images/House.jpg">
+			</div>
+			<div class="col-md-8">
+				<h1>Welcome to Smart Pension</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -19,117 +45,46 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
-		</div>
-		<div class="slide">
-			<img src="images/22.jpg" alt="">
-			<div class="info">
-				<h2>Slide 02</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-		</div>
-		<div class="slide">
-			<img src="images/33.jpg" alt="">
-			<div class="info">
-				<h2>Slide 03</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-		</div>
-		<div class="slide">
-			<img src="images/4.jpg" alt="">
-			<div class="info">
-				<h2>Slide 04</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-		</div>
-		<div class="slide">
-			<img src="images/5.jpg" alt="">
-			<div class="info">
-				<h2>Slide 05</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-		</div>
-		<div class="navigation">
-			<div class="btn active"></div>
-			<div class="btn"></div>
-			<div class="btn"></div>
-			<div class="btn"></div>
-			<div class="btn"></div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		var slides = document.querySelectorAll('.slide');
-		var btns = document.querySelectorAll('.btn');
-		let currentSlide = 1;
-
-		//javascript for image slider manual navigation
-		var manualNav = function(manual){
-			slides.forEach((slide) => {
-				slide.classList.remove('active');
-
-				btns.forEach((btn) =>{
-					btn.classList.remove('active');
-				});
-			});
-
-
-			slides[manual].classList.add('active');
-			btns[manual].classList.add('active');
-		}
-
-		btns.forEach((btn, i) => {
-			btn.addEventListener("click", ()=> {
-				manualNav(i);
-				currentSlide = i;
-			});
-		});
-
-		//javascript for image slider autoplay navigation
-		var repeat = function(activeClass){
-			let active = document.getElementsByClassName('active');
-			let i =1;
-
-			var repeater = () => {
-				setTimeout(function(){
-					[...active].forEach((activeSlide) => {
-						activeSlide.classList.remove('active');
-					});
-
-					slides[i].classList.add('active');
-					btns[i].classList.add('active');
-					i++;
-
-					if (slides.length == i) {
-						i=0;
-					}
-					if (i >= slides.length) {
-						return;
-					}
-					repeater();
-				}, 10000);
-			}
-			repeater();
-		}
-		repeat();
-	</script>
+	<center>
+		<h1>Our Founders</h1>
+	</center>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<img class="welcome_img" src="images/Founder1.jpg">
+				<h2> Mr. John</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+			</div>
+			<div class="col-md-3">
+				<img class="welcome_img" src="images/Founder2.jpg">
+				<h2> Ms. Peace</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. </p>
+			</div>
+			<div class="col-md-3">
+				<img class="welcome_img" src="images/Founder3.jpg">
+				<h2> Mr. David</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+			</div>
+			<div class="col-md-3">
+				<img class="welcome_img" src="images/Founder4.jpg">
+				<h2> Ms. Stacy</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

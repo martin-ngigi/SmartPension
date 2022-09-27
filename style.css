@@ -8,11 +8,64 @@
 }
 
 body{
+/*	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #102128;*/
+}
+
+/*start of Menu*/
+nav
+{
+	position: fixed;
+	background-color: skyblue;
+	height: 70px;
+	width: 100%;
+	z-index: 1;
+}
+
+.logo
+{
+	font-size: 25px;
+	position: relative;
+	left: 5%;
+	color: black;
+	font-weight: bold;
+	line-height: 70px;
+
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+ul{
+	position: relative;
+	float: right;
+	margin-right: 20px;
+}
+
+ul li{
+	display: inline-block;
+	line-height: 70px;
+	margin: 0 5px;
+}
+
+ul li a
+{
+	text-decoration: none;
+	color: white;
+	font-size: 17px;
+}
+/*end of menu*/
+
+/*start of slider*/
+.slider_body{
+	position: center;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #102128;
+	background-color: #fff;
 }
 
 .image-slider{
@@ -20,6 +73,7 @@ body{
 	width: 800px;
 	height: 500px;
 	margin: 10px;
+	margin-top: 25px;
 	background-color: #102128;
 }
 
@@ -175,3 +229,78 @@ body{
 	}
 
 }
+/*end of slider.
+
+/*start of welcome message*/
+.welcome_img
+{
+	width: 100%;
+	height: 250px;
+}
+
+.container
+{
+	 padding-top: 70px; 
+}
+/* end of welcome message*/
+
+col-md-4{
+	width: 100px;
+	height: 100px;
+}
+
+
+/*Login form*/
+
+
+.form_deg
+{
+	padding: 200px;
+}
+
+.label_deg
+{
+	display: inline-block;
+	color: blue;
+	width: 100px;
+	text-align: right;
+	padding-top: 10px;
+	font-size: 18px;
+	padding-bottom: 10px;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.login_form
+{
+	background-color: skyblue;
+	width: 500px;
+	padding: 70px;
+}
+
+#login_btn
+{
+	position: relative;
+	width: 50%;
+	left: 5%;
+}
+
+.title_deg
+{
+	background: lightgreen;
+	color: darkred;
+	width: 500px;
+	font-size: 22px;
+	text-align: center;
+	font-weight: bold;
+	padding: 10px;
+	font-family: "Poppins", sans-serif;
+}
+
+.body_deg_login
+{
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+/*End of Login*/
