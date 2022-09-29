@@ -63,7 +63,7 @@ if (isset($_POST['register_btn'])) {
 			alert('data uploaded successfully');
 			</script>";
 			//after savind data successfully, redirect to Home Page
-			header("location:home.php");
+			header("location:applicanthome.php");
 		}
 		else
 		{

@@ -43,11 +43,11 @@ if (isset($_POST['update_btn'])) {
 <body>
 
 	<nav>
-		<label class="logo">W-School</label>
+		<label class="logo">Smart Pension</label>
 		<ul>
 			<li><a href="">Home</a></li>
 			<li><a href="">Contact</a></li>
-			<li><a href="">Applications</a></li>
+			<li><a href="applications_applicant.php">Applications</a></li>
 			<li><a href="update_profile.php">Update Profile</a></li>
 			<li><a href="login.php" class="btn btn-success">Logout</a></li>
 		</ul>
