@@ -24,7 +24,7 @@ session_start();
 	  exit();
 	}
 
-	$sql="SELECT * FROM applications WHERE Status='Pending'";
+	$sql="SELECT * FROM applications WHERE Status='Pending: Please Wait, We Will Update You'";
 	$result=mysqli_query($data, $sql);
 
 
