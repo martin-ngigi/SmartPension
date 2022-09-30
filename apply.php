@@ -46,14 +46,20 @@ session_start();
 	$status ="Pending";
 	$served_by = "";
 	$disbursed_date ="";
+
+
+	//a user can apply for pension funds only once a moth. first check whether user has applied for pensions before
+	$month_year =  date("m/Y"); //ie month/Year
+
+	//For checking whether there are applications
+	$sql3="SELECT * FROM applications WHERE Name='$name' AND Application_Date  LIKE '%$month_year'";
+	$result3=mysqli_query($data, $sql3);
 	
 
 		// if apply_button is clicked
 	if (isset($_POST['apply_button'])) {
 
-		//a user can apply for pension funds only once a moth. first check whether user has applied for pensions before
-		$month_year =  date("m/Y"); //ie month/Year
-
+		//For checking whether there is an already existing applications, if there is an existing application for this month, reject the application
 		$check="SELECT * FROM applications WHERE Name='$name' AND Application_Date  LIKE '%$month_year' "; // * or % is used to check whether a a string starts or ends with that cut string
 		$check_user=mysqli_query($data,$check);
 		//check if there is multiple users
@@ -136,6 +142,7 @@ session_start();
 					//clear error message if still there
 					$message2 ="";
 					$_SESSION['application_message']=$message2; //store error message 
+
 				}
 				else{
 					$message="upload failed";
@@ -217,6 +224,51 @@ session_start();
 				echo $_SESSION['application_message_success'];
 				?>
 			</h4>
+
+			<div class="content">
+		<center>
+			<h1>Pending Application(s)</h1>
+
+			<table border="1px">
+				<!-- table header -->
+				<tr>
+					<th style="padding: 20px; font-size: 15px;">Name</th>
+					<th style="padding: 20px; font-size: 15px;">Application Time</th>
+					<th style="padding: 20px; font-size: 15px;">Phone</th>
+					<th style="padding: 20px; font-size: 15px;">Status</th>
+					<th style="padding: 20px; font-size: 15px;">Amount</th>
+				</tr>
+
+				<!-- while loop -->
+				<?php
+				while ($info3=$result3->fetch_assoc())
+				{ // while loop start
+				?>
+				<!-- cells where data will be displayed -->
+				<tr>
+					<td style="padding: 10px;">
+						<?php echo "{$info3['Name']}"; ?>
+					</td>
+					<td style="padding: 10px;">
+						<?php echo "{$info3['Application_Time']}"; ?>
+					</td>
+					<td style="padding: 10px;">
+						<?php echo "{$info3['Phone']}"; ?>
+					</td>
+					<td style="padding: 10px;">
+						<?php echo "{$info3['Status']}"; ?>
+					</td>
+					<td style="padding: 10px;">
+						<?php echo "{$info3['Amount']}"; ?>
+					</td>
+				</tr>
+				<?php
+				} // while loop end -->
+				?>
+			</table>
+		</center>
+		
+	</div>
 		</form>
 	 </center>
 </body>

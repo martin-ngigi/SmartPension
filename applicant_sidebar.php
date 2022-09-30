@@ -1,7 +1,11 @@
 <header class="header">
 	<a href="">Student Dashboard</a>
 	<div class="logout">
+		<a href="applicanthome.php"> Home </a>
+		<a href=""> Contact </a>
+		<a href=""> Applications </a>
 		<a href="logout.php" class="btn btn-primary">Logout</a>
+
 	</div>
 </header>
 <aside>
@@ -10,10 +14,7 @@
 			<a href="apply.php">Apply</a>
 		</li>
 		<li>
-			<a href="">Previous Applications</a>
-		</li>
-		<li>
-			<a href="">Print</a>
+			<a href="previous_applications.php">Previous Applications</a>
 		</li>
 	</ul>
 </aside>
