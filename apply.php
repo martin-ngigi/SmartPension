@@ -43,7 +43,7 @@ session_start();
 	$application_date ="".date("d/m/Y");
 	$time = date("h:i:sa d/m/Y");;
 	$amount = "2000";
-	$status ="Pending";
+	$status ="Pending: Please Wait, We Will Update You";
 	$served_by = "";
 	$disbursed_date ="";
 
@@ -227,7 +227,7 @@ session_start();
 
 			<div class="content">
 		<center>
-			<h1>Pending Application(s)</h1>
+			<h1>This Month Application(s)</h1>
 
 			<table border="1px">
 				<!-- table header -->
