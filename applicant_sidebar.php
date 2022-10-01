@@ -2,10 +2,8 @@
 	<a href="">Applicant Dashboard</a>
 	<div class="logout">
 		<a href="applicanthome.php"> Home </a>
-		<a href=""> Contact </a>
-		<a href=""> Applications </a>
+		<a href="apply.php"> Applications </a>
 		<a href="logout.php" class="btn btn-primary">Logout</a>
-
 	</div>
 </header>
 <aside>

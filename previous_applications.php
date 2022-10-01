@@ -24,11 +24,11 @@ session_start();
 	  exit();
 	}
 
-	$name =$_SESSION['Username'];
+	$username =$_SESSION['Username'];
 
 
 	//For checking whether there are applications
-	$sql3="SELECT * FROM applications WHERE Name='$name' ";
+	$sql3="SELECT * FROM applications WHERE Username='$username' ";
 	$result3=mysqli_query($data, $sql3);
 
 
@@ -73,10 +73,12 @@ session_start();
 	<center>
 		<h1>Current and Previous Application(s)</h1>
 
-		<table border="1px">
+		<table border="1px" style="margin-left: 160px;">
 			<!-- table header -->
 			<tr>
-				<th style="padding: 20px; font-size: 15px;">Name</th>
+				<th style="padding: 20px; font-size: 15px;">Username</th>
+				<th style="padding: 20px; font-size: 15px;">First Name</th>
+				<th style="padding: 20px; font-size: 15px;">Last Name</th>
 				<th style="padding: 20px; font-size: 15px;">Application Time</th>
 				<th style="padding: 20px; font-size: 15px;">Phone</th>
 				<th style="padding: 20px; font-size: 15px;">Status</th>
@@ -91,7 +93,13 @@ session_start();
 			<!-- cells where data will be displayed -->
 			<tr>
 				<td style="padding: 10px;">
-					<?php echo "{$info3['Name']}"; ?>
+					<?php echo "{$info3['Username']}"; ?>
+				</td>
+				<td style="padding: 10px;">
+					<?php echo "{$info3['First_Name']}"; ?>
+				</td>
+				<td style="padding: 10px;">
+					<?php echo "{$info3['Last_Name']}"; ?>
 				</td>
 				<td style="padding: 10px;">
 					<?php echo "{$info3['Application_Time']}"; ?>

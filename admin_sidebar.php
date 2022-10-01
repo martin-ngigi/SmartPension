@@ -2,8 +2,7 @@
 	<a href="">Applicant Dashboard</a>
 	<div class="logout">
 		<a href="index.php"> Home </a>
-		<a href=""> Contact </a>
-		<a href=""> Applications </a>
+		<a href="current_applications.php"> Applications </a>
 		<a href="logout.php" class="btn btn-primary">Logout</a>
 
 	</div>

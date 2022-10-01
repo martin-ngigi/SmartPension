@@ -26,12 +26,13 @@ session_start();
 	}
 
 	$served_by = $_SESSION['Username'];
+	$month_year = date("m/Y");
 
-	$sql="SELECT * FROM applications WHERE Status='Pending' AND Id_Number='$id_num' AND Application_Date LIKE '%$month_year' ";
+	$sql="SELECT * FROM applications WHERE Id_Number='$id_num' AND Application_Date LIKE '%$month_year' ";
 	$result=mysqli_query($data, $sql);
 
 	$disbursed_date = "";
-	$month_year = date("m/Y");
+	
 
 
 	//if one clicks the update button,
@@ -83,19 +84,20 @@ session_start();
 	 ?>
 	 <h2>Update status</h2>
 
-	 <table border="1px" style="margin-left: 120px;">
+	 <table border="1px" style="margin-left: 210px; margin-right: 10px;">
 	 	<!-- # means will stay in this file... ie update will take place in this method -->
 		<form action="#" method="POST">
 			<!-- table header -->
 			<tr>
-				<th style="padding: 20px; font-size: 15px;">Name</th>
-				<th style="padding: 20px; font-size: 15px;">ID Number</th>
-				<th style="padding: 20px; font-size: 15px;">Application Time</th>
-				<th style="padding: 20px; font-size: 15px;">Phone</th>
-				<th style="padding: 20px; font-size: 15px;">Status</th>
-				<th style="padding: 20px; font-size: 15px;">Amount</th>
-				<th style="padding: 20px; font-size: 15px;">Select Status To Update</th>
-				<th style="padding: 20px; font-size: 15px;">Update</th>
+				<th style="padding: 3px; font-size: 15px;">UserName</th>
+				<th style="padding: 3px; font-size: 15px;">First Name</th>
+				<th style="padding: 3px; font-size: 15px;">Last Name</th>
+				<th style="padding: 3px; font-size: 15px;">ID Number</th>
+				<th style="padding: 3px; font-size: 15px;">Application Time</th>
+				<th style="padding: 3px; font-size: 15px;">Status</th>
+				<th style="padding: 3px; font-size: 15px;">Amount</th>
+				<th style="padding: 3px; font-size: 15px;">Select Status To Update</th>
+				<th style="padding: 3px; font-size: 15px;">Update</th>
 			</tr>
 
 			<!-- while loop -->
@@ -106,16 +108,19 @@ session_start();
 			<!-- cells where data will be displayed -->
 			<tr>
 				<td style="padding: 2px;">
-					<?php echo "{$info['Name']}"; ?>
+					<?php echo "{$info['Username']}"; ?>
+				</td>
+				<td style="padding: 2px;">
+					<?php echo "{$info['First_Name']}"; ?>
+				</td>
+				<td style="padding: 2px;">
+					<?php echo "{$info['Last_Name']}"; ?>
 				</td>
 				<td style="padding:  2px;">
 					<?php echo "{$info['Id_Number']}"; ?>
 				</td>
 				<td style="padding:  2px;">
 					<?php echo "{$info['Application_Time']}"; ?>
-				</td>
-				<td style="padding:  2px;">
-					<?php echo "{$info['Phone']}"; ?>
 				</td>
 				<td style="padding:  2px;">
 					<?php echo "{$info['Status']}"; ?>

@@ -70,16 +70,17 @@ session_start();
 		<h1>Current and Previous Application(s)</h1>
 		<form action="#" method="POST" > <!-- # means after clicking, stay on this page -->
 
-			<table border="1px" style="margin-left: 120px;">
+			<table border="1px" style="margin-left: 190px;">
 				<!-- table header -->
 				<tr>
-					<th style="padding: 20px; font-size: 15px;">Name</th>
-					<th style="padding: 20px; font-size: 15px;">ID Number</th>
-					<th style="padding: 20px; font-size: 15px;">Application Time</th>
-					<th style="padding: 20px; font-size: 15px;">Phone</th>
-					<th style="padding: 20px; font-size: 15px;">Status</th>
-					<th style="padding: 20px; font-size: 15px;">Amount</th>
-					<th style="padding: 20px; font-size: 15px;">Date Disbursed</th>
+					<th style="padding: 10px; font-size: 15px;">UserName</th>
+					<th style="padding: 10px; font-size: 15px;">First Name</th>
+					<th style="padding: 10px; font-size: 15px;">Last Name</th>
+					<th style="padding: 10px; font-size: 15px;">ID Number</th>
+					<th style="padding: 10px; font-size: 15px;">Application Time</th>
+					<th style="padding: 10px; font-size: 15px;">Status</th>
+					<th style="padding: 10px; font-size: 15px;">Amount</th>
+					<th style="padding: 10px; font-size: 15px;">Date Disbursed</th>
 				</tr>
 
 				<!-- while loop -->
@@ -90,16 +91,19 @@ session_start();
 				<!-- cells where data will be displayed -->
 				<tr>
 					<td style="padding: 2px;">
-						<?php echo "{$info['Name']}"; ?>
+						<?php echo "{$info['Username']}"; ?>
+					</td>
+					<td style="padding: 2px;">
+						<?php echo "{$info['First_Name']}"; ?>
+					</td>
+					<td style="padding: 2px;">
+						<?php echo "{$info['Last_Name']}"; ?>
 					</td>
 					<td style="padding:  2px;">
 						<?php echo "{$info['Id_Number']}"; ?>
 					</td>
 					<td style="padding:  2px;">
 						<?php echo "{$info['Application_Time']}"; ?>
-					</td>
-					<td style="padding:  2px;">
-						<?php echo "{$info['Phone']}"; ?>
 					</td>
 					<td style="padding:  2px;">
 						<?php echo "{$info['Status']}"; ?>

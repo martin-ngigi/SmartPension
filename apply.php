@@ -23,22 +23,24 @@ session_start();
 	  exit();
 	}
 
-	$name =$_SESSION['Username'];
+	$username =$_SESSION['Username'];
 	
 	//get data from db for personal details such as names...
-	$sql="SELECT * FROM user WHERE Username='$name'";
+	$sql="SELECT * FROM user WHERE Username='$username'";
 
 	$result=mysqli_query($data, $sql);
 
 	$info= mysqli_fetch_assoc($result);
 
-	//$name = "{$info['username']}";
+	
 	$id_nu = "{$info['ID_Nu']}";
 	$age = "{$info['Age']}";
 	$phone = "{$info['Phone']}";
 	$nationality = "{$info['Nationality']}";
 	$pension_beneficiary = "{$info['Pension_Beneficiary']}";
 	$employed = "{$info['Employed']}";
+	$first_name = "{$info['First_Name']}";
+	$last_name = "{$info['Last_Name']}";
 	
 	$application_date ="".date("d/m/Y");
 	$time = date("h:i:sa d/m/Y");;
@@ -52,7 +54,7 @@ session_start();
 	$month_year =  date("m/Y"); //ie month/Year
 
 	//For checking whether there are applications
-	$sql3="SELECT * FROM applications WHERE Name='$name' AND Application_Date  LIKE '%$month_year'";
+	$sql3="SELECT * FROM applications WHERE Username='$username' AND Application_Date  LIKE '%$month_year'";
 	$result3=mysqli_query($data, $sql3);
 	
 
@@ -60,7 +62,7 @@ session_start();
 	if (isset($_POST['apply_button'])) {
 
 		//For checking whether there is an already existing applications, if there is an existing application for this month, reject the application
-		$check="SELECT * FROM applications WHERE Name='$name' AND Application_Date  LIKE '%$month_year' "; // * or % is used to check whether a a string starts or ends with that cut string
+		$check="SELECT * FROM applications WHERE Username='$username' AND Application_Date  LIKE '%$month_year' "; // * or % is used to check whether a a string starts or ends with that cut string
 		$check_user=mysqli_query($data,$check);
 		//check if there is multiple users
 		$row_count=mysqli_num_rows($check_user);
@@ -127,7 +129,7 @@ session_start();
 			else{ //Now he/she is eligible
 
 				//save data to db:
-				$sql2="INSERT INTO applications(Name, Id_Number, Application_Date, Application_Time, Amount, Status, Served_By, Disbursed_Date, Phone) VALUES('$name', '$id_nu', '$application_date', '$time', '$amount', '$status', '$served_by', '$disbursed_date', '$phone')";
+				$sql2="INSERT INTO applications(Username, Id_Number, Application_Date, Application_Time, Amount, Status, Served_By, Disbursed_Date, Phone, First_Name, Last_Name) VALUES('$username', '$id_nu', '$application_date', '$time', '$amount', '$status', '$served_by', '$disbursed_date', '$phone','$first_name', '$last_name')";
 
 				$result=mysqli_query($data, $sql2);
 				if ($result){
@@ -232,7 +234,9 @@ session_start();
 			<table border="1px">
 				<!-- table header -->
 				<tr>
-					<th style="padding: 20px; font-size: 15px;">Name</th>
+					<th style="padding: 20px; font-size: 15px;">Username</th>
+					<th style="padding: 20px; font-size: 15px;">First Name</th>
+					<th style="padding: 20px; font-size: 15px;">Last Name</th>
 					<th style="padding: 20px; font-size: 15px;">Application Time</th>
 					<th style="padding: 20px; font-size: 15px;">Phone</th>
 					<th style="padding: 20px; font-size: 15px;">Status</th>
@@ -247,7 +251,13 @@ session_start();
 				<!-- cells where data will be displayed -->
 				<tr>
 					<td style="padding: 10px;">
-						<?php echo "{$info3['Name']}"; ?>
+						<?php echo "{$info3['Username']}"; ?>
+					</td>
+					<td style="padding: 10px;">
+						<?php echo "{$info3['First_Name']}"; ?>
+					</td>
+					<td style="padding: 10px;">
+						<?php echo "{$info3['Last_Name']}"; ?>
 					</td>
 					<td style="padding: 10px;">
 						<?php echo "{$info3['Application_Time']}"; ?>

@@ -10,12 +10,13 @@ $data=mysqli_connect('localhost', 'root', '', 'SmartPension');
 // if register_btn is clicked
 if (isset($_POST['register_btn'])) {
 	//get data
+	$first_name=$_POST['first_name_input'];
+	$last_name=$_POST['last_name_input'];
 	$username=$_POST['user_name_input'];
 	$email=$_POST['email_input'];
 	$phone=$_POST['phone_input'];
 	$birth_date = $_POST['birth_date_input'];
-	$age = $_POST['age_input'];
-	$county = $_POST['county_input'];
+	$county =  htmlspecialchars($_POST['countyDD']);
 	$nationality = $_POST['nationality_input'];
 	$gender = htmlspecialchars($_POST['genderDD']);
 	$id_nu = $_POST['id_input'];
@@ -32,10 +33,17 @@ if (isset($_POST['register_btn'])) {
 	$nk_email = $_POST['nk_email_input'];
 	$usertype="applicant";
 
-	// echo "Gender : ".htmlspecialchars($_POST['genderDD']);
-	// echo "Bank : ".htmlspecialchars($_POST['bankDD']);
-	// echo "Employed : ".htmlspecialchars($_POST['employedDD']); 
-	// echo "Pension : ".htmlspecialchars($_POST['pensionDD']);
+	//CALCULATE AGE
+	  //date in mm/dd/yyyy format; or it can be in other formats as well
+	  //$birthDate = "12/17/1983";
+	  $birthDate = $birth_date;
+	  //explode the date to get month, day and year
+	  $birthDate = explode("/", $birthDate);
+	  //get age from date or birthdate
+	  $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
+	    ? ((date("Y") - $birthDate[2]) - 1)
+	    : (date("Y") - $birthDate[2]));
+	 // echo "Age is:" . $age;
 	
 
 
@@ -54,7 +62,7 @@ if (isset($_POST['register_btn'])) {
 	else
 	{
 			//sql statement to save data to db
-		$sql="INSERT INTO user(username, Date_of_birth, Phone, Age, County, Nationality, Gender, ID_Nu, Bank, Account_Nu, KRA_Pin, Employed, Pension_Beneficiary, Password, NK_Name, NK_ID, NK_Relationship, NK_Phone, NK_Email, UserType, Email) VALUES('$username', '$birth_date', '$phone', '$age', '$county', '$nationality', '$gender', '$id_nu', '$bank', '$account_nu', '$kra_pin', '$employed', '$pension_beneficiary', '$password', '$nk_name', '$nk_id', '$nk_relationship', '$nk_phone', '$nk_email', '$usertype', '$email')";
+		$sql="INSERT INTO user(Username, Date_of_birth, Phone, Age, County, Nationality, Gender, ID_Nu, Bank, Account_Nu, KRA_Pin, Employed, Pension_Beneficiary, Password, NK_Name, NK_ID, NK_Relationship, NK_Phone, NK_Email, UserType, Email, First_Name, Last_Name) VALUES('$username', '$birth_date', '$phone', '$age', '$county', '$nationality', '$gender', '$id_nu', '$bank', '$account_nu', '$kra_pin', '$employed', '$pension_beneficiary', '$password', '$nk_name', '$nk_id', '$nk_relationship', '$nk_phone', '$nk_email', '$usertype', '$email', '$first_name', '$last_name')";
 
 		$result=mysqli_query($data, $sql);
 		if ($result)
@@ -63,7 +71,7 @@ if (isset($_POST['register_btn'])) {
 			alert('data uploaded successfully');
 			</script>";
 			//after savind data successfully, redirect to Home Page
-			header("location:applicanthome.php");
+			header("location:login.php");
 		}
 		else
 		{
@@ -139,11 +147,25 @@ if (isset($_POST['register_btn'])) {
 
 
 <div class="content">
+
 	<center>
+		<div class="logout">
+			<a href="index.php"> Home </a>
+			<a href="apply.php"> Applications </a>
+			<a href="login.php" class="btn btn-primary">Login</a>
+		</div>
 		<h1>Register</h1>
 		<div class="div_deg">
 			<!-- # means we are going to add some code in the same same file so as to save/insert/upload -->
 			<form action="#" method="POST" id="s">
+				<div class="adm_int">
+					<label class="label_text">First Name</label>
+					<input class="input_deg" type="text" name="first_name_input">
+				</div>
+				<div class="adm_int">
+					<label class="label_text">Last Name</label>
+					<input class="input_deg" type="text" name="last_name_input">
+				</div>
 				<div class="adm_int">
 					<label class="label_text">Username</label>
 					<input class="input_deg" type="text" name="user_name_input">
@@ -158,7 +180,7 @@ if (isset($_POST['register_btn'])) {
 				</div>
 				<div class="adm_int">
 					<label class="label_text">Date Of Birth</label>
-					<input class="input_deg" type="text" name="birth_date_input">
+					<input class="input_deg" type="text" placeholder="NB: use dd/mm/yyyy format" name="birth_date_input">
 				</div>
 				<div class="adm_int">
 					<label class="label_text">Age</label>
@@ -166,7 +188,56 @@ if (isset($_POST['register_btn'])) {
 				</div>
 				<div class="adm_int">
 					<label class="label_text">County</label>
-					<input class="input_deg" type="text" name="county_input">
+					<select name="countyDD" class="input_deg">
+					    <option value="Mombasa">Mombasa</option>
+					    <option value="Kwale">Kwale</option>
+					    <option value="Kilifi">Kilifi</option>
+					    <option value="Tana River">Tana River</option>
+					    <option value="Lamu">Lamu</option>
+					    <option value="Taita-Taveta">Taita-Taveta</option>
+					    <option value="Garisa">Garisa</option>
+					    <option value="Wajir">Wajir</option>
+					    <option value="Mandera">Mandera</option>
+					    <option value="Marsabit">Marsabit</option>
+					    <option value="Isiolo">Isiolo</option>
+					    <option value="Meru">Meru</option>
+					    <option value="Tharaka-Nithi">Tharaka-Nithi</option>
+					    <option value="Embu">Embu</option>
+					    <option value="Kitui">Kitui</option>
+					    <option value="Machakos">Machakos</option>
+					    <option value="Makueni">Makueni</option>
+					    <option value="Nyandarua">Nyandarua</option>
+					    <option value="Nyeri">Nyeri</option>
+					    <option value="Kirinyaga">Kirinyaga</option>
+					    <option value="Muranga">Muranga</option>
+					    <option value="Kiambu">Kiambu</option>
+					    <option value="Turkana">Turkana</option>
+					    <option value="West Pokot">West Pokot</option>
+					    <option value="Samburu">Samburu</option>
+					    <option value="Trans-Nzoia">Trans-Nzoia</option>
+					    <option value="Uasin Gishu">Uasin Gishu</option>
+					    <option value="Elgeyo Marakwet">Elgeyo Marakwet</option>
+					    <option value="Nandi">Nandi</option>
+					    <option value="Baringo">Baringo</option>
+					    <option value="Laikipia">Laikipia</option>
+					    <option value="Nakuru">Nakuru</option>
+					    <option value="Narok">Narok</option>
+					    <option value="Kajiado">Kajiado</option>
+					    <option value="Kericho">Kericho</option>
+					    <option value="Bomet">Bomet</option>
+					    <option value="Kakamega">Kakamega</option>
+					    <option value="Vihiga">Vihiga</option>
+					    <option value="Bungoma">Bungoma</option>
+					    <option value="Busia">Busia</option>
+					    <option value="Siaya">Siaya</option>
+					    <option value="Kisumu">Kisumu</option>
+					    <option value="Homa Bay">Homa Bay</option>
+					    <option value="Migori">Migori</option>
+					    <option value="Kisii">Kisii</option>
+					    <option value="Nyamira">Nyamira</option>
+					    <option value="Nairobi">Nairobi</option>
+
+				    </select> 
 				</div>
 				<div class="adm_int">
 					<label class="label_text">Nationality</label>

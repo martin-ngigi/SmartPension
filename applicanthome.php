@@ -45,11 +45,10 @@ if (isset($_POST['update_btn'])) {
 	<nav>
 		<label class="logo">Smart Pension</label>
 		<ul>
-			<li><a href="">Home</a></li>
-			<li><a href="">Contact</a></li>
+			<li><a href="applicanthome.php">Home</a></li>
 			<li><a href="applications_applicant.php">Applications</a></li>
 			<li><a href="update_profile.php">Update Profile</a></li>
-			<li><a href="login.php" class="btn btn-success">Logout</a></li>
+			<li><a href="index.php" class="btn btn-success">Logout</a></li>
 		</ul>
 	</nav>
 
@@ -64,12 +63,7 @@ if (isset($_POST['update_btn'])) {
 			</div>
 			<div class="col-md-8">
 				<h1>Welcome to Smart Pension</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>A mind that is not concerned with itself, that is free of ambition, a mind that not caught up in its own desires or driven by its own pursuit of success – such a mind is not shallow and it flowers in goodness.</p>
 			</div>
 		</div>
 	</div>
@@ -82,34 +76,22 @@ if (isset($_POST['update_btn'])) {
 			<div class="col-md-3">
 				<img class="welcome_img" src="images/Founder1.jpg">
 				<h2> Mr. John</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.</p>
+				<p>All great things start on a small scale, all great movements begin with individuals; and if we wait for collective action, such action, if it takes place at all, is destructive and conducive to further misery. So revolution must begin with you and me.</p>
 			</div>
 			<div class="col-md-3">
 				<img class="welcome_img" src="images/Founder2.jpg">
 				<h2> Ms. Peace</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. </p>
+				<p>The more you know yourself, the more clarity there is. Self-knowledge has no end – you don’t achieve, you don’t come to a conclusion. It is an endless river.</p>
 			</div>
 			<div class="col-md-3">
 				<img class="welcome_img" src="images/Founder3.jpg">
 				<h2> Mr. David</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.</p>
+				<p>Society is an abstraction. Abstraction is not a reality. What is reality is relationship. The relationship between human beings has created what we call society.</p>
 			</div>
 			<div class="col-md-3">
 				<img class="welcome_img" src="images/Founder4.jpg">
 				<h2> Ms. Stacy</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.</p>
+				<p>Ambition is a form of power, the desire for power over oneself and others, the power to do something better than anybody else. In ambition is a sense of comparison, and so the ambitious man is not a creative man, is never a happy man; in himself he is discontented.</p>
 			</div>
 		</div>
 	</div>

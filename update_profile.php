@@ -71,7 +71,7 @@ session_start();
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Register</title>
+	<title>Update Profie</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -129,6 +129,12 @@ session_start();
 
 <div class="content">
 	<center>
+		<ul style="background: skyblue;">
+			<li><a href="applicanthome.php">Home</a></li>
+			<li><a href="applications_applicant.php">Applications</a></li>
+			<li><a href="update_profile.php">Update Profile</a></li>
+			<li><a href="index.php" class="btn btn-success">Logout</a></li>
+		</ul>
 		<h1>Update Profile</h1>
 		<div class="div_deg">
 			<!-- # means we are going to add some code in the same same file so as to save/insert/upload -->
