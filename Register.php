@@ -17,6 +17,7 @@ if (isset($_POST['register_btn'])) {
 	$phone=$_POST['phone_input'];
 	$birth_date = $_POST['birth_date_input'];
 	$county =  htmlspecialchars($_POST['countyDD']);
+	$constituency = $_POST['constituency_input'];
 	$nationality = $_POST['nationality_input'];
 	$gender = htmlspecialchars($_POST['genderDD']);
 	$id_nu = $_POST['id_input'];
@@ -62,7 +63,7 @@ if (isset($_POST['register_btn'])) {
 	else
 	{
 			//sql statement to save data to db
-		$sql="INSERT INTO user(Username, Date_of_birth, Phone, Age, County, Nationality, Gender, ID_Nu, Bank, Account_Nu, KRA_Pin, Employed, Pension_Beneficiary, Password, NK_Name, NK_ID, NK_Relationship, NK_Phone, NK_Email, UserType, Email, First_Name, Last_Name) VALUES('$username', '$birth_date', '$phone', '$age', '$county', '$nationality', '$gender', '$id_nu', '$bank', '$account_nu', '$kra_pin', '$employed', '$pension_beneficiary', '$password', '$nk_name', '$nk_id', '$nk_relationship', '$nk_phone', '$nk_email', '$usertype', '$email', '$first_name', '$last_name')";
+		$sql="INSERT INTO user(Username, Date_of_birth, Phone, Age, County, Nationality, Gender, ID_Nu, Bank, Account_Nu, KRA_Pin, Employed, Pension_Beneficiary, Password, NK_Name, NK_ID, NK_Relationship, NK_Phone, NK_Email, UserType, Email, First_Name, Last_Name, Constituency) VALUES('$username', '$birth_date', '$phone', '$age', '$county', '$nationality', '$gender', '$id_nu', '$bank', '$account_nu', '$kra_pin', '$employed', '$pension_beneficiary', '$password', '$nk_name', '$nk_id', '$nk_relationship', '$nk_phone', '$nk_email', '$usertype', '$email', '$first_name', '$last_name', '$constituency')";
 
 		$result=mysqli_query($data, $sql);
 		if ($result)
@@ -183,10 +184,6 @@ if (isset($_POST['register_btn'])) {
 					<input class="input_deg" type="text" placeholder="NB: use dd/mm/yyyy format" name="birth_date_input">
 				</div>
 				<div class="adm_int">
-					<label class="label_text">Age</label>
-					<input class="input_deg" type="number" name="age_input">
-				</div>
-				<div class="adm_int">
 					<label class="label_text">County</label>
 					<select name="countyDD" class="input_deg">
 					    <option value="Mombasa">Mombasa</option>
@@ -238,6 +235,10 @@ if (isset($_POST['register_btn'])) {
 					    <option value="Nairobi">Nairobi</option>
 
 				    </select> 
+				</div>
+				<div class="adm_int">
+					<label class="label_text">Constituency</label>
+					<input class="input_deg" type="text" name="constituency_input">
 				</div>
 				<div class="adm_int">
 					<label class="label_text">Nationality</label>
