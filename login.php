@@ -21,8 +21,8 @@
 </head>
 <body class="body_deg_login">
 	<center>
-		<div class="form_deg">
-			<center class="title_deg">
+		<div class="form_deg" >
+			<center class="title_deg" style="width: 600px;">
 				Login form
 				<!-- show error message -->
 				<h4 style="color: red">
@@ -35,7 +35,7 @@
 					?>
 				</h4>
 			</center>
-			<form action="login_check.php" method="POST" class="login_form">
+			<form action="login_check.php" method="POST" class="login_form" style="width: 600px;">
 				<div class="adm_int">
 					<label class="label_text">Username</label>
 					<input class="input_deg" type="text" name="username">

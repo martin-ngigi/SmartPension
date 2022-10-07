@@ -255,7 +255,7 @@ col-md-4{
 
 .form_deg
 {
-	padding: 200px;
+	padding: 300px;
 }
 
 .label_deg
@@ -274,8 +274,8 @@ col-md-4{
 .login_form
 {
 	background-color: skyblue;
-	width: 500px;
-	padding: 70px;
+	width: 600px;
+	padding: 200px;
 }
 
 #login_btn
