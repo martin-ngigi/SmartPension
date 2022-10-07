@@ -5,7 +5,7 @@ session_start();
 error_reporting(0);
 
 //connect to db
-$data=mysqli_connect('localhost', 'root', '', 'SmartPension');
+$data=mysqli_connect('localhost', 'root', '', 'smartpension');
 
 // if register_btn is clicked
 if (isset($_POST['register_btn'])) {

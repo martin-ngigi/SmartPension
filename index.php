@@ -17,7 +17,7 @@
 <body>
 
 	<nav>
-		<label class="logo">W-School</label>
+		<label class="logo">Smart Pension</label>
 		<ul>
 			<li><a href="index.php">Home</a></li>
 			<li><a href="apply.php">Applications</a></li>
