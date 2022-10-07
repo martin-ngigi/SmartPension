@@ -15,7 +15,7 @@ session_start();
 
 	//get id_num from current_applications when update button is clicked
 	$id_num = $_GET['national_id'];
-	echo "$id_num";
+	//echo "$id_num";
 
 	//connect to db
 	$data=mysqli_connect('localhost', 'root', '', 'smartpension');
@@ -84,7 +84,7 @@ session_start();
 	 ?>
 	 <h2>Update status</h2>
 
-	 <table border="1px" style="margin-left: 210px; margin-right: 10px;">
+	 <table border="1px" style="margin-left: 300px; margin-right: 10px;">
 	 	<!-- # means will stay in this file... ie update will take place in this method -->
 		<form action="#" method="POST">
 			<!-- table header -->
