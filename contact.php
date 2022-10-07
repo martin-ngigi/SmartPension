@@ -2,9 +2,21 @@
 
 session_start();
 
+//get the username from login page that was sent to applicanthome.php
+if (!isset($_SESSION['Username']))
+{
+	//always check if there is no user name sent to here ie applicant home, then residect to login.php
+	header("location:login.php");
+}
+//else if user is a admin, redirect to login.php
+elseif ($_SESSION['UserType']=='admin') {
+	header("location:login.php");
+}
+
+
 $data=mysqli_connect('localhost', 'root', '', 'smartpension');
 
-//this method is called only if "apply-btn" is clicked.... "apply-btn" is in index.php
+//this method is called only if "apply-btn" is clicked.... "apply-btn" is in contact.php
 if (isset($_POST['apply_btn'])) 
 {
 	
@@ -183,7 +195,7 @@ if (isset($_POST['apply_btn']))
 				<textarea class="input_txt" name="message_input"></textarea>
 			</div>
 			<div class="adm_int">
-				<input class="btn btn-primary" id="submit" type="submit" value="apply" name="apply_btn">
+				<input class="btn btn-primary" id="submit" type="submit" value="Send" name="apply_btn">
 			</div>
 		</form>
 	</div>
