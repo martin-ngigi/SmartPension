@@ -41,10 +41,11 @@ session_start();
 		$status = htmlspecialchars($_POST['statusDD']);
 		//echo "$status";
 
-		//is status Completed
-		if ($status == "Completed: Check Your Account Balance") {
+		//is status Disbursed
+		if ($status == "Disbursed: Check Your Account Balance") {
 			$disbursed_date = date("d/m/Y");
 			//echo "Status is Completed $disbursed_date";
+			//
 		}
 
 		$query = "UPDATE applications SET Status='$status', Served_By='$served_by', Disbursed_Date='$disbursed_date' WHERE Id_Number=$id_num AND Application_Date LIKE '%$month_year'";
@@ -134,7 +135,7 @@ session_start();
 						<select name="statusDD" class="input_deg">
 						    <option value="Pending: Please Wait, We Will Update You">Pending</option>
 						    <option value="Processing: Please Wait Till Completed">Processing</option>
-						    <option value="Completed: Check Your Account Balance">Completed</option>
+						    <option value="Disbursed: Check Your Account Balance">Disbursed</option>
 						    <option value="Cancelled: Please Contact Customer-Care For More Details">Cancelled</option>
 					    </select> 
 					</div>
