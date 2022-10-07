@@ -153,6 +153,7 @@ if (isset($_POST['register_btn'])) {
 		<div class="logout">
 			<a href="index.php"> Home </a>
 			<a href="apply.php"> Applications </a>
+			<a href="contact.php">Contact</a>
 			<a href="login.php" class="btn btn-primary">Login</a>
 		</div>
 		<h1>Register</h1>

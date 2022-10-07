@@ -46,6 +46,7 @@ if (isset($_POST['update_btn'])) {
 		<label class="logo">Smart Pension</label>
 		<ul>
 			<li><a href="applicanthome.php">Home</a></li>
+			<li><a href="contact.php">Contact</a></li>
 			<li><a href="applications_applicant.php">Applications</a></li>
 			<li><a href="update_profile.php">Update Profile</a></li>
 			<li><a href="index.php" class="btn btn-success">Logout</a></li>
