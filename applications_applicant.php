@@ -37,12 +37,14 @@ session_start();
 
 	 ?>
 	 <center>
-	 	<div style="margin-left: 230px; margin-right: 50px;">
+	 	<div style="margin-left: 230px; margin-right: 50px; font-size: 20px;">
 	 		<h2>Eligability for application.</h2>
-	 		 <p>1. The candidate must be a Kenyan citizen.</p>
-	 		 <p>2. The candidate must be 70 years and above.</p>
+	 		 <p>1. The applicant must be a Kenyan citizen.</p>
+	 		 <p>2. The applicant must be 70 years and above.</p>
 	 		 <p>3. Not enrolled or receiving pension from another organization.</p>
 	 		 <p>4. Must have a registered active KCB or equity bank account.</p>
+	 		 <p>5. Must have lived in the constituency for more than a year.</p>
+	 		 <p>6. Must not be employed.</p>
 	 	</div>
 	 </center>
 
