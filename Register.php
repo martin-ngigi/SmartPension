@@ -45,8 +45,16 @@ if (isset($_POST['register_btn'])) {
 	    ? ((date("Y") - $birthDate[2]) - 1)
 	    : (date("Y") - $birthDate[2]));
 	 // echo "Age is:" . $age;
-	
 
+	    //validate phone number
+	  if(! preg_match('/^(\+254|0)\d{9}$/', $phone)) { //! maeans phone number doesnt match pattern
+		   //echo "$data_phone is not valid phone number";
+		   echo "<script type='text/javascript'>
+				alert('$phone is not valid phone number. Enter a valid phone number');
+				</script>";
+		  
+		}
+	
 
 	//before saving, first check whether there is another student with the same username so as to avoid corrission of usernames
 	$check="SELECT * FROM user WHERE username='$username'";
@@ -153,7 +161,7 @@ if (isset($_POST['register_btn'])) {
 		<div class="logout">
 			<a href="index.php"> Home </a>
 			<a href="apply.php"> Applications </a>
-			<a href="contact.php">Contact</a>
+			<a href="contact.php">Contact</a></li>
 			<a href="login.php" class="btn btn-primary">Login</a>
 		</div>
 		<h1>Register</h1>
